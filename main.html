@@ -4,18 +4,15 @@
   <title>
     Weather Master
   </title>
+  <link rel="icon" type="image/ico" href="imgs/sunny.png" />
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="app.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
   <div class="container">
-    <div class="name">
-    <h2>Weather-App</h2>
-    </div>
-
     <div class="main">
-
       <div class="left">
         <div class="temp"><span id="temp">0</span>&deg;</div>
         <div class="loc"><span id = "loc">Unknown</span></div>
@@ -23,20 +20,21 @@
       <div class="right">
         <div class="top">
           <img id="icon" width="75px" src="imgs/codes/200.png" />
-
         </div>
         <div class="bottom">
-          <img src="imgs/humidity.png" height="16px"/>
+          <div class="humidity">
+            <img src="imgs/humidity.png" height="16px"/>
             <span id="humidity">0</span>%
-          <span id="wind">0</span> mph <span id="direction">N</span>
+          </div>
+          <div class="wind">
+            <span id="wind">0</span> mph <span id="direction">N</span>
+          </div>
         </div>
       </div>
-
     </div>
     <div class="footer">
 
     </div>
 </div>
-
 </body>
 </html>
