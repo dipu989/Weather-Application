@@ -6,31 +6,29 @@ var humidity;
 var wind;
 var direction;
 
-function updateByPin(pin)
+function updateByPin(pin,co)
 {
-  var url = "https://openweathermap.org/data/2.5/weather?"+
+  var url = "http://api.openweathermap.org/data/2.5/weather?"+
   "zip="+ pin +
   "&APPID=" + APPID;
+  console.log(url);
   sendRequest(url);
 }
 
-function updateByGeo(lat,lon){
-  var url = "https://openweathermap.org/data/2.5/weather?"+
+function updateByGeo(lat, lon){
+  var url = "http://api.openweathermap.org/data/2.5/weather?"+
   "lat=" + lat +
   "&lon=" + lon +
   "&APPID=" + APPID;
   sendRequest(url);
 }
+
 function sendRequest(url)
 {
   var xmlhttp = new XMLHttpRequest();
-
-  console.log("Hi");
   xmlhttp.onreadystatechange = function() {
-
-    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var data = JSON.parse(xmlhttp.responseText);
-      console.log("Hii Bro");
       var weather = {};
       weather.icon = data.weather[0].id;
       weather.humidity = data.main.humidity;
@@ -45,8 +43,7 @@ function sendRequest(url)
 }
 
 function showPosition(position){
-  console.log(position.coor.latitude);
-  updateByGeo(position.coord.latitude,position.coord.longitude);
+  updateByGeo(position.coords.latitude,position.coords.longitude);
 }
 
 function update(weather) {
@@ -66,12 +63,14 @@ window.onload = function() {
   wind = document.getElementById("wind");
   direction = document.getElementById("direction");
 
-  if(navigator.geolocation){
+  var pos = navigator.geolocation.getCurrentPosition(showPosition);
+
+if(navigator.geolocation){
     var pos = navigator.geolocation.getCurrentPosition(showPosition);
   }
   else{
     var pin = window.prompt("We could not discover your location. What is your zip Code?");
     updateByPin(pin);
   }
-  updateByPin(94040);
+  updateByPin(700102);
 }
