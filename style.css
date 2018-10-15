@@ -16,6 +16,7 @@
   color: white;
   text-align: center;
 }
+
 .right{
   float: right;
   width: 230px;
@@ -23,6 +24,9 @@
 }
 
 .top{
+  text-align: center;
+  font-weight: bold;
+  color: black;
   background: #cec;
   height: 50%;
 }
@@ -34,9 +38,8 @@
   font-weight: bold;
 }
 
-.top img{
-  margin-top: 40px;
-  margin-left: 70px;
+.top .image{
+  padding-top: 30px;
 }
 
 .temp{
@@ -50,7 +53,14 @@
   width: 230px;
 }
 
+body, html{
+  height: 100%;
+}
+
 body{
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
   padding: 0px;
   margin: 0px;
   background-image: url("imgs/back-min.jpg");
