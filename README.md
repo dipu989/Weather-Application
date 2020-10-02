@@ -1,5 +1,5 @@
 # Weather-Application
-A weather application which informs about current Location's name, Weather-description, Temprature, Windspeed and Humidity.
+This is a awesome weather application,which informs about current Location's name, Weather-description, Temprature, Windspeed and Humidity.
 This weather application is made using HTML, CSS and JavaScript.
 Weather information is fetched using API of the website:- http://openweathermap.org
 This App is supported by the browser with or without Geolocation facility.
